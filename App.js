@@ -3,7 +3,7 @@ import {Text, View} from 'react-native';
 
 const App = () => (
   <View>
-    <Text>componentName</Text>
+    <Text>Login Screen</Text>
   </View>
 );
 
