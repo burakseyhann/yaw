@@ -1,10 +1,12 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-
-const App = () => (
-  <View>
-    <Text>Login Screen</Text>
-  </View>
-);
+import {View} from 'react-native';
+import LoginScreen from './src/screens/login-screen/LoginScreen';
+function App(props) {
+  return (
+    <View style={{flex: 1}}>
+      <LoginScreen />
+    </View>
+  );
+}
 
 export default App;
