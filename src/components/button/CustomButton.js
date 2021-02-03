@@ -4,10 +4,10 @@ import styles from './style';
 
 function CustomButton(props) {
   return (
-    <TouchableOpacity style={styles.signInButton}>
+    <TouchableOpacity activeOpacity={0.9} style={styles.signInButton}>
     <Text style={styles.text}>{props.label}</Text>
   </TouchableOpacity>
   );
-}
+};
 
 export default CustomButton;
