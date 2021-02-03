@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Text,
   View,
@@ -13,13 +13,12 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import LinearGradient from 'react-native-linear-gradient';
-import {useState} from 'react';
 import CustomTextInput from '../../components/text-input/CustomTextInput';
 import CustomButton from '../../components/button/CustomButton';
 import LogoView from '../../components/logo/LogoView';
 import styles from './style';
 
-function LoginScreen() {
+function LoginScreen({navigation}) {
   const [width, setWidth] = useState(Dimensions.get('window').width);
   const [height, setHeight] = useState(Dimensions.get('window').height);
 
@@ -37,7 +36,7 @@ function LoginScreen() {
   const _keyboardDidShow = (e) => {
     const keyboardHeight = height - e.endCoordinates.height;
     setHeight(keyboardHeight);
-    console.log(keyboardHeight, 'keyboardHeight');
+  
   };
 
   const _keyboardDidHide = () => {
@@ -45,7 +44,7 @@ function LoginScreen() {
     setHeight(screenHeight);
   };
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex:1, backgroundColor:'white'}}>
       <TouchableWithoutFeedback style={{flex: 1}} onPress={Keyboard.dismiss}>
         <KeyboardAvoidingView
           behavior="padding"
@@ -86,7 +85,10 @@ function LoginScreen() {
           <View style={styles.line}></View>
           <View style={styles.footerContainer}>
             <Text style={styles.text}>Henüz bir hesabın yok mu? </Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Register');
+              }}>
               <Text style={styles.signUpText}>Kayıt ol</Text>
             </TouchableOpacity>
           </View>

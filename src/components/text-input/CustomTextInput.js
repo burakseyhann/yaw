@@ -7,7 +7,9 @@ function CustomTextInput(props) {
     <TextInput
       placeholder={props.placeholder}
       secureTextEntry={props.secureTextEntry}
-      style={styles.textInput}
+      autoCorrect={props.autoCorrect}
+      keyboardType={props.autoCompleteType}
+      style={{...styles.textInput, width: props.width, height: props.height}}
     />
   );
 }
