@@ -2,9 +2,12 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   textInput: {
+    flexDirection: 'row',
+    alignItems:'center',
+  
     backgroundColor: 'white',
     borderRadius: 20,
-    paddingVertical: 15,
+    paddingVertical: 3,
     paddingHorizontal: 16,
     marginBottom: 17,
     borderWidth: 1,
@@ -16,8 +19,10 @@ export default StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-     
     elevation: 7,
-
+  },
+  icon: {
+    position: 'absolute',
+    right:10,
   },
 });

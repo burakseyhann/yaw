@@ -11,16 +11,20 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
 } from 'react-native';
+
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import LinearGradient from 'react-native-linear-gradient';
-import CustomTextInput from '../../components/text-input/CustomTextInput';
-import CustomButton from '../../components/button/CustomButton';
-import LogoView from '../../components/logo/LogoView';
+
+import CustomTextInput from '../../shared/components/text-input/CustomTextInput';
+import CustomButton from '../../shared/components/button/CustomButton';
+import LogoView from '../../shared/components/logo/LogoView';
 import styles from './style';
+import {Colors} from '../../shared/Styles/Color'
 
 function LoginScreen({navigation}) {
   const [width, setWidth] = useState(Dimensions.get('window').width);
   const [height, setHeight] = useState(Dimensions.get('window').height);
+  
 
   useEffect(() => {
     Keyboard.addListener('keyboardDidShow', _keyboardDidShow);
@@ -44,20 +48,20 @@ function LoginScreen({navigation}) {
     setHeight(screenHeight);
   };
   return (
-    <SafeAreaView style={{flex:1, backgroundColor:'white'}}>
+    <SafeAreaView style={{flex:1, backgroundColor:Colors.white}}>
       <TouchableWithoutFeedback style={{flex: 1}} onPress={Keyboard.dismiss}>
         <KeyboardAvoidingView
           behavior="padding"
           style={{flex: 1}}
           keyboardVerticalOffset={-50}>
           <LinearGradient
-            colors={['rgb(65, 29, 108)', 'rgb(198, 166, 236)']}
+            colors={[Colors.main,Colors.second]}
             style={styles.headerContainer}>
             <LogoView label="LOGO" width={height / 5} height={height / 5} />
           </LinearGradient>
           <View style={styles.mainContainer}>
             <CustomTextInput placeholder="Kullanici Adi" />
-            <CustomTextInput placeholder="Şifre" secureTextEntry={true} />
+            <CustomTextInput placeholder="Şifre" secureTextEntry={false} />
             <TouchableOpacity style={styles.visiblePassword}>
               <Text style={{...styles.text, fontSize: 17}}>Şifreyi göster</Text>
               <Icon
@@ -74,7 +78,7 @@ function LoginScreen({navigation}) {
                   style={{
                     ...styles.text,
                     fontWeight: 'normal',
-                    color: '#2680eb',
+                    color: Colors.blue,
                   }}>
                   Şifreni mi unuttun?
                 </Text>
