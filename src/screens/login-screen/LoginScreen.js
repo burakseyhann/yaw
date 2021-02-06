@@ -72,7 +72,9 @@ function LoginScreen({navigation}) {
               />
             </TouchableOpacity>
             <View style={styles.buttonContainer}>
-              <CustomButton label="Giris Yap" />
+              <CustomButton label="Giris Yap" onPress={()=>{
+                navigation.replace('Home');
+              }} />
               <TouchableOpacity style={styles.forgotPassword}>
                 <Text
                   style={{
