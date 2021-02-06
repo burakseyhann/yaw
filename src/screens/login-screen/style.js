@@ -1,5 +1,7 @@
 import {StyleSheet} from 'react-native';
 
+import {Colors} from '../../shared/Styles/Color'
+
 export default StyleSheet.create({
   headerContainer: {
     flex: 3,
@@ -9,14 +11,14 @@ export default StyleSheet.create({
     justifyContent: 'center', //vertical
   },
   mainContainer: {
-    backgroundColor: 'white',
+    backgroundColor: Colors.white,
     paddingHorizontal: 23,
     paddingVertical: 33,
     flex: 4,
   },
   footerContainer: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor:Colors.white,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
@@ -44,14 +46,14 @@ export default StyleSheet.create({
   text: {
     fontSize: 20,
     fontStyle: 'italic',
-    color: 'grey',
+    color:Colors.grey
   },
   line: {
     borderWidth: 0.8,
-    borderColor: 'grey',
+    borderColor: Colors.grey,
   },
   signUpText: {
-    color: '#2680eb',
+    color: Colors.blue,
     fontWeight: 'bold',
     fontSize: 20,
   },
