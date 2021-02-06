@@ -86,7 +86,7 @@ function RegisterScreen(props) {
               autoCorrect={false}
             />
             <CustomTextInput 
-            placeholder="Seni Kimler Görsün OÇ" 
+            placeholder="Seni Kimler Görsün OÇ sjgah" 
             value={choice}
             onChangeText={(item)=>setChoie(item)}
             />
