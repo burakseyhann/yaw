@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-function Settings  (props){
+function Settings  ({navigation}){
     return(
     <View>
-        <Text>Settings</Text>
+        <Text onPress={()=> {navigation.navigate('EditProfile')}}>Settings</Text>
     </View>
 );
 }

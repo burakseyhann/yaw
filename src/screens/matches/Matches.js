@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-function Matches  (props){
+function Matches  ({navigation}){
     return(
     <View>
-        <Text>Matches</Text>
+        <Text onPress={()=>{navigation.navigate('ProfileDetails')}}>Matches</Text>
     </View>
 );
 }
