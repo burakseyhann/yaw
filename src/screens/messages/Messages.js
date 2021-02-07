@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-function Messages(props){
-    console.log(props.route);
+function Messages({navigation}){
+    
 return(
 <View>
-    <Text>Messages</Text>
+<Text onPress={() => navigation.navigate('MessageDetails') } >Messages</Text>
 </View>
 )
 };
