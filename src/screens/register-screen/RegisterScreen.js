@@ -20,33 +20,14 @@ import CustomButton from '../../shared/components/button/CustomButton';
 function RegisterScreen({navigation}) {
   const [width, setWidth] = useState(Dimensions.get('window').width);
   const [height, setHeight] = useState(Dimensions.get('window').height);
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [mail, setMail] = useState("");
-  const [choice, setChoie] = useState("");
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  const [mail, setMail] = useState('');
+  const [choice, setChoice] = useState('');
 
-  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [passwordVisible, setPasswordVisible] = useState(true);
+  const [iconEye, setIconEye] = useState(false);
 
-  useEffect(() => {
-    Keyboard.addListener('keyboardDidShow', _keyboardDidShow);
-    Keyboard.addListener('keyboardDidHide', _keyboardDidHide);
-
-    // cleanup function
-    return () => {
-      Keyboard.removeListener('keyboardDidShow', _keyboardDidShow);
-      Keyboard.removeListener('keyboardDidHide', _keyboardDidHide);
-    };
-  }, []);
-
-  const _keyboardDidShow = (e) => {
-    const keyboardHeight = height - e.endCoordinates.height;
-    setHeight(keyboardHeight);
-  };
-
-  const _keyboardDidHide = () => {
-    const screenHeight = Dimensions.get('window').height;
-    setHeight(screenHeight);
-  };
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: Colors.white}}>
       <TouchableWithoutFeedback style={{flex: 1}} onPress={Keyboard.dismiss}>
@@ -61,38 +42,45 @@ function RegisterScreen({navigation}) {
             <CustomTextInput
               placeholder="Kullanici Adi"
               value={userName}
+              keyboardType="visible-password"
               onChangeText={(item) => setUserName(item)}
             />
             <View>
               <CustomTextInput
                 placeholder="Şifre"
                 secureTextEntry={passwordVisible}
+                autoCorrect={false}
                 value={password}
                 onChangeText={(item) => setPassword(item)}
-                iconName={'eye'}
+                iconName={iconEye ? 'eye' : 'eye-slash'}
                 iconSize={20}
                 iconColor={'gray'}
                 onPress={() => {
                   //for vsible or hide the password
                   setPasswordVisible(!passwordVisible);
-                  console.log('password is visible: ', passwordVisible);
+                  setIconEye(!iconEye);
                 }}
               />
             </View>
             <CustomTextInput
               placeholder="mail"
               value={mail}
+              keyboardType="visible-password"
               onChangeText={(item) => setMail(item)}
               autoCorrect={false}
             />
             <CustomTextInput
-              placeholder="Seni Kimler Görsün OÇ sjgah"
+              placeholder="Seni Kimler Görsün"
               value={choice}
-              onChangeText={(item) => setChoie(item)}
+              keyboardType="visible-password"
+              onChangeText={(item) => setChoice(item)}
             />
-            <CustomButton label="Giris Yap" onPress={() => {
-              navigation.navigate('Home');
-            }} />
+            <CustomButton
+              label="Giris Yap"
+              onPress={() => {
+                navigation.navigate('Home');
+              }}
+            />
           </View>
         </View>
       </TouchableWithoutFeedback>
