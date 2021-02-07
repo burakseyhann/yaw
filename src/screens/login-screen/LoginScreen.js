@@ -19,12 +19,15 @@ import CustomTextInput from '../../shared/components/text-input/CustomTextInput'
 import CustomButton from '../../shared/components/button/CustomButton';
 import LogoView from '../../shared/components/logo/LogoView';
 import styles from './style';
-import {Colors} from '../../shared/Styles/Color'
+import {Colors} from '../../shared/Styles/Color';
 
 function LoginScreen({navigation}) {
   const [width, setWidth] = useState(Dimensions.get('window').width);
   const [height, setHeight] = useState(Dimensions.get('window').height);
-  
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordVisible, setPasswordVisible] = useState(true);
+  const [iconEye, setIconEye] = useState(false);
 
   useEffect(() => {
     Keyboard.addListener('keyboardDidShow', _keyboardDidShow);
@@ -40,7 +43,6 @@ function LoginScreen({navigation}) {
   const _keyboardDidShow = (e) => {
     const keyboardHeight = height - e.endCoordinates.height;
     setHeight(keyboardHeight);
-  
   };
 
   const _keyboardDidHide = () => {
@@ -48,33 +50,48 @@ function LoginScreen({navigation}) {
     setHeight(screenHeight);
   };
   return (
-    <SafeAreaView style={{flex:1, backgroundColor:Colors.white}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: Colors.white}}>
       <TouchableWithoutFeedback style={{flex: 1}} onPress={Keyboard.dismiss}>
         <KeyboardAvoidingView
           behavior="padding"
           style={{flex: 1}}
           keyboardVerticalOffset={-50}>
           <LinearGradient
-            colors={[Colors.main,Colors.second]}
+            colors={[Colors.main, Colors.second]}
             style={styles.headerContainer}>
             <LogoView label="LOGO" width={height / 5} height={height / 5} />
           </LinearGradient>
           <View style={styles.mainContainer}>
-            <CustomTextInput placeholder="Kullanici Adi" />
-            <CustomTextInput placeholder="Şifre" secureTextEntry={false} />
-            <TouchableOpacity style={styles.visiblePassword}>
-              <Text style={{...styles.text, fontSize: 17}}>Şifreyi göster</Text>
-              <Icon
-                style={styles.passwordIcon}
-                name="eye"
-                size={20}
-                color="grey"
+            <CustomTextInput
+              placeholder="Kullanici Adi"
+              value={userName}
+              keyboardType="visible-password"
+              onChangeText={(item) => setUserName(item)}
+            />
+            <View>
+              <CustomTextInput
+                placeholder="Şifre"
+                secureTextEntry={passwordVisible}
+                autoCorrect={false}
+                value={password}
+                onChangeText={(item) => setPassword(item)}
+                iconName={iconEye ? 'eye' : 'eye-slash'}
+                iconSize={20}
+                iconColor={'gray'}
+                onPress={() => {
+                  //for vsible or hide the password
+                  setPasswordVisible(!passwordVisible);
+                  setIconEye(!iconEye);
+                }}
               />
-            </TouchableOpacity>
+            </View>
             <View style={styles.buttonContainer}>
-              <CustomButton label="Giris Yap" onPress={()=>{
-                navigation.replace('Home');
-              }} />
+              <CustomButton
+                label="Giris Yap"
+                onPress={() => {
+                  navigation.replace('Home');
+                }}
+              />
               <TouchableOpacity style={styles.forgotPassword}>
                 <Text
                   style={{

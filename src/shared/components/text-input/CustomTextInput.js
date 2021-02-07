@@ -12,7 +12,7 @@ function CustomTextInput(props) {
       onChangeText={props.onChangeText}
       secureTextEntry={props.secureTextEntry}
       autoCorrect={props.autoCorrect}
-      keyboardType={props.autoCompleteType}
+      keyboardType={props.keyboardType}
       style={{width:'100%'}}
      
     />
