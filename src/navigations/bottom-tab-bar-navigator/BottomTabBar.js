@@ -1,5 +1,7 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
 
 import Matches from '../../screens/matches/Matches';
 import ProfileDetails from '../../screens/matches/profile-details/ProfileDetails';
@@ -8,8 +10,7 @@ import MessageDetail from '../../screens/messages/message-detail/MessageDetail';
 import Settings from '../../screens/settings/Settings';
 import EditProfile from '../../screens/settings/edit-profile/EditProfile';
 
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
+import MyTabBar from '../../shared/components/tab-bar/MyTabBar';
 
 const MessageStack = createStackNavigator();
 const MatchStack = createStackNavigator();
@@ -45,7 +46,7 @@ function settingStack() {
 const Tab = createBottomTabNavigator();
 function TabBar(props) {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBar={(props) => <MyTabBar {...props} />}>
       <Tab.Screen name={'Messages'} component={messagesStack} />
       <Tab.Screen name={'Matches'} component={matchStack} />
       <Tab.Screen name={'Settings'} component={settingStack} />
