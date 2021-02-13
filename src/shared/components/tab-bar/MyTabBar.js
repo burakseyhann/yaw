@@ -20,7 +20,7 @@ function MyTabBar({state, navigation}) {
     return (
       <TouchableOpacity
         activeOpacity={1}
-        style={{flex: 1, alignItems: 'center'}}
+        style={{flex: 1, alignItems: 'center',height:'100%',justifyContent:'center'}}
         key={route.name}
         onPress={() => navigation.navigate(route.name)}>
         <Icon
@@ -40,7 +40,7 @@ function MyTabBar({state, navigation}) {
         flexDirection: 'row',
         height: '9%',
         justifyContent: 'space-around',
-        alignItems: 'center',
+   
       }}>
       {state.routes.map((route, index) => {
         const isFocused = state.index === index;

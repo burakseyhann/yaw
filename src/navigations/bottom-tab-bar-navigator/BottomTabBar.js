@@ -11,6 +11,7 @@ import Settings from '../../screens/settings/Settings';
 import EditProfile from '../../screens/settings/edit-profile/EditProfile';
 
 import MyTabBar from '../../shared/components/tab-bar/MyTabBar';
+import headerOptions from '../../shared/components/header/MyHeader';
 
 const MessageStack = createStackNavigator();
 const MatchStack = createStackNavigator();
@@ -19,8 +20,24 @@ const SettingStack = createStackNavigator();
 function messagesStack() {
   return (
     <MessageStack.Navigator>
-      <MessageStack.Screen name={'Messages'} component={Messages} />
-      <MessageStack.Screen name={'MessageDetails'} component={MessageDetail} />
+      <MessageStack.Screen
+        name={'Messages'}
+        component={Messages}
+        options={{
+          header: ({scene, previous, navigation}) => {
+            return headerOptions(scene, previous, navigation);
+          },
+        }}
+      />
+      <MessageStack.Screen
+        name={'MessageDetails'}
+        component={MessageDetail}
+        options={{
+          header: ({scene, previous, navigation}) => {
+            return headerOptions(scene, previous, navigation);
+          },
+        }}
+      />
     </MessageStack.Navigator>
   );
 }
@@ -28,8 +45,24 @@ function messagesStack() {
 function matchStack() {
   return (
     <MatchStack.Navigator>
-      <MatchStack.Screen name={'Matches'} component={Matches} />
-      <MatchStack.Screen name={'ProfileDetails'} component={ProfileDetails} />
+      <MatchStack.Screen
+        name={'Matches'}
+        component={Matches}
+        options={{
+          header: ({scene, previous, navigation}) => {
+            return headerOptions(scene, previous, navigation);
+          },
+        }}
+      />
+      <MatchStack.Screen
+        name={'ProfileDetails'}
+        component={ProfileDetails}
+        options={{
+          header: ({scene, previous, navigation}) => {
+            return headerOptions(scene, previous, navigation);
+          },
+        }}
+      />
     </MatchStack.Navigator>
   );
 }
@@ -37,8 +70,24 @@ function matchStack() {
 function settingStack() {
   return (
     <SettingStack.Navigator>
-      <SettingStack.Screen name={'Settings'} component={Settings} />
-      <SettingStack.Screen name={'EditProfile'} component={EditProfile} />
+      <SettingStack.Screen
+        name={'Settings'}
+        component={Settings}
+        options={{
+          header: ({scene, previous, navigation}) => {
+            return headerOptions(scene, previous, navigation);
+          },
+        }}
+      />
+      <SettingStack.Screen
+        name={'EditProfile'}
+        component={EditProfile}
+        options={{
+          header: ({scene, previous, navigation}) => {
+            return headerOptions(scene, previous, navigation);
+          },
+        }}
+      />
     </SettingStack.Navigator>
   );
 }
