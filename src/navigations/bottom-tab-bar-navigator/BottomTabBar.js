@@ -9,7 +9,6 @@ import Messages from '../../screens/messages/Messages';
 import MessageDetail from '../../screens/messages/message-detail/MessageDetail';
 import Settings from '../../screens/settings/Settings';
 import EditProfile from '../../screens/settings/edit-profile/EditProfile';
-
 import MyTabBar from '../../shared/components/tab-bar/MyTabBar';
 import headerOptions from '../../shared/components/header/MyHeader';
 
@@ -19,7 +18,7 @@ const SettingStack = createStackNavigator();
 
 function messagesStack() {
   return (
-    <MessageStack.Navigator>
+    <MessageStack.Navigator  headerMode={'screen'}>
       <MessageStack.Screen
         name={'Messages'}
         component={Messages}
@@ -44,7 +43,7 @@ function messagesStack() {
 
 function matchStack() {
   return (
-    <MatchStack.Navigator>
+    <MatchStack.Navigator headerMode={'screen'}>
       <MatchStack.Screen
         name={'Matches'}
         component={Matches}
@@ -69,7 +68,7 @@ function matchStack() {
 
 function settingStack() {
   return (
-    <SettingStack.Navigator>
+    <SettingStack.Navigator  headerMode={'screen'}>
       <SettingStack.Screen
         name={'Settings'}
         component={Settings}
@@ -101,6 +100,6 @@ function TabBar(props) {
       <Tab.Screen name={'Settings'} component={settingStack} />
     </Tab.Navigator>
   );
-}
+};
 
 export default TabBar;

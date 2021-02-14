@@ -7,7 +7,7 @@ function MyHeader(props) {
   return (
     <LinearGradient
       colors={[Colors.main, Colors.second]}
-      style={{height: 80, flexDirection: 'row', alignItems: 'center'}}>
+      style={{height:90, flexDirection: 'row', alignItems: 'center'}}>
       <View
         style={{
           width: 55,
