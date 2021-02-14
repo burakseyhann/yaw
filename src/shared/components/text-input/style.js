@@ -23,6 +23,6 @@ export default StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    right:10,
+    right:12,
   },
 });

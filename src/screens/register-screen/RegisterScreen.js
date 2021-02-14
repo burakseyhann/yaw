@@ -53,7 +53,7 @@ function RegisterScreen({navigation}) {
                 value={password}
                 onChangeText={(item) => setPassword(item)}
                 iconName={iconEye ? 'eye' : 'eye-slash'}
-                iconSize={20}
+                iconSize={18}
                 iconColor={'gray'}
                 onPress={() => {
                   //for vsible or hide the password
