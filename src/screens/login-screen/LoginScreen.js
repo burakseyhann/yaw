@@ -99,7 +99,7 @@ function LoginScreen({navigation}) {
                     fontWeight: 'normal',
                     color: Colors.blue,
                   }}>
-                  Şifreni mi unuttusdaFDn?
+                  Şifreni mi unuttusdaFDsdgagsn?
                 </Text>
               </TouchableOpacity>
             </View>
