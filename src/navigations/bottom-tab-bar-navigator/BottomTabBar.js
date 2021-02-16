@@ -12,13 +12,14 @@ import EditProfile from '../../screens/settings/edit-profile/EditProfile';
 import MyTabBar from '../../shared/components/tab-bar/MyTabBar';
 import headerOptions from '../../shared/components/header/MyHeader';
 
+
 const MessageStack = createStackNavigator();
 const MatchStack = createStackNavigator();
 const SettingStack = createStackNavigator();
 
 function messagesStack() {
   return (
-    <MessageStack.Navigator  headerMode={'screen'}>
+    <MessageStack.Navigator mode='modal'  headerMode={'screen'}>
       <MessageStack.Screen
         name={'Messages'}
         component={Messages}
@@ -94,7 +95,7 @@ function settingStack() {
 const Tab = createBottomTabNavigator();
 function TabBar(props) {
   return (
-    <Tab.Navigator tabBar={(props) => <MyTabBar {...props} />}>
+    <Tab.Navigator  tabBar={(props) => <MyTabBar {...props} />}>
       <Tab.Screen name={'Messages'} component={messagesStack} />
       <Tab.Screen name={'Matches'} component={matchStack} />
       <Tab.Screen name={'Settings'} component={settingStack} />
