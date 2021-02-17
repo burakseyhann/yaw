@@ -1,16 +1,17 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
 
-import MatchesListItem from '../../shared/components/matches-list-item/MatchesListItem';
-import styles from './style';
+import { Text, View} from 'react-native';
+
 import Questions from '../questions/Questions';
 
 function Messages({navigation}) {
   return (
-    <SafeAreaView style={styles.mainContainer}>
-      <MatchesListItem />
+    <View>
+      <Text onPress={() => navigation.navigate('MessageDetails')}>
+        Messages
+      </Text>
       <Questions />
-    </SafeAreaView>
+    </View>
   );
 }
 
