@@ -38,11 +38,6 @@ export default StyleSheet.create({
   buttonContainer: {
     paddingTop: 22,
   },
-  signInButton:{
-    borderRadius: 25,
-    backgroundColor: '#2680eb',
-    marginBottom: 20,
-  },
   forgotPassword: {
     marginTop: 22,
     alignItems: 'center',

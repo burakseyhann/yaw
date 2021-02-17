@@ -1,14 +1,12 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
-import MatchesListItem from '../../shared/components/matches-list-item/MatchesListItem';
-import styles from './style';
+import { Text, View } from 'react-native';
 
-function Matches({navigation}) {
-  return (
-    <SafeAreaView style={styles.mainContainer}>
-      <MatchesListItem />
-    </SafeAreaView>
-  );
+function Matches  ({navigation}){
+    return(
+    <View>
+        <Text onPress={()=>{navigation.navigate('ProfileDetails')}}>Matches</Text>
+    </View>
+);
 }
 
 export default Matches;
