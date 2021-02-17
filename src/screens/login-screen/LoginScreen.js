@@ -87,6 +87,8 @@ function LoginScreen({navigation}) {
             </View>
             <View style={styles.buttonContainer}>
               <CustomButton
+                activeOpacity={0.9}
+                style={styles.signInButton}
                 label="Giris Yap"
                 onPress={() => {
                   navigation.replace('Home');
