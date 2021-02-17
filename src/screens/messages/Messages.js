@@ -1,14 +1,17 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import {SafeAreaView, StyleSheet, View} from 'react-native';
 
-function Messages({navigation}){
-    
-return(
-<View>
-<Text onPress={() => navigation.navigate('MessageDetails') } >Messages</Text>
-</View>
-)
-};
+import MatchesListItem from '../../shared/components/matches-list-item/MatchesListItem';
+import styles from './style';
+import Questions from '../questions/Questions';
+
+function Messages({navigation}) {
+  return (
+    <SafeAreaView style={styles.mainContainer}>
+      <MatchesListItem />
+      <Questions />
+    </SafeAreaView>
+  );
+}
 
 export default Messages;
-
