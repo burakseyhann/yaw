@@ -12,14 +12,13 @@ import EditProfile from '../../screens/settings/edit-profile/EditProfile';
 import MyTabBar from '../../shared/components/tab-bar/MyTabBar';
 import headerOptions from '../../shared/components/header/MyHeader';
 
-
 const MessageStack = createStackNavigator();
 const MatchStack = createStackNavigator();
 const SettingStack = createStackNavigator();
 
 function messagesStack() {
   return (
-    <MessageStack.Navigator mode='modal'  headerMode={'screen'}>
+    <MessageStack.Navigator mode="modal" headerMode={'screen'}>
       <MessageStack.Screen
         name={'Messages'}
         component={Messages}
@@ -32,6 +31,15 @@ function messagesStack() {
       <MessageStack.Screen
         name={'MessageDetails'}
         component={MessageDetail}
+        options={{
+          header: ({scene, previous, navigation}) => {
+            return headerOptions(scene, previous, navigation);
+          },
+        }}
+      />
+      <MessageStack.Screen
+        name={'ProfileDetails'}
+        component={ProfileDetails}
         options={{
           header: ({scene, previous, navigation}) => {
             return headerOptions(scene, previous, navigation);
@@ -55,8 +63,8 @@ function matchStack() {
         }}
       />
       <MatchStack.Screen
-        name={'ProfileDetails'}
-        component={ProfileDetails}
+        name={'MessageDetails'}
+        component={MessageDetail}
         options={{
           header: ({scene, previous, navigation}) => {
             return headerOptions(scene, previous, navigation);
@@ -69,7 +77,7 @@ function matchStack() {
 
 function settingStack() {
   return (
-    <SettingStack.Navigator  headerMode={'screen'}>
+    <SettingStack.Navigator headerMode={'screen'}>
       <SettingStack.Screen
         name={'Settings'}
         component={Settings}
@@ -95,12 +103,12 @@ function settingStack() {
 const Tab = createBottomTabNavigator();
 function TabBar(props) {
   return (
-    <Tab.Navigator  tabBar={(props) => <MyTabBar {...props} />}>
+    <Tab.Navigator tabBar={(props) => <MyTabBar {...props} />}>
       <Tab.Screen name={'Messages'} component={messagesStack} />
       <Tab.Screen name={'Matches'} component={matchStack} />
       <Tab.Screen name={'Settings'} component={settingStack} />
     </Tab.Navigator>
   );
-};
+}
 
 export default TabBar;
