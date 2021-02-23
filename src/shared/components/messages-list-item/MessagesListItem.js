@@ -3,7 +3,8 @@ import {Text, View, TouchableOpacity, FlatList} from 'react-native';
 import styles from './style';
 import {MESSAGESDATA} from '../../../data/messages-list-data/MessagesListData';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import * as RootNavigation from '../../../navigations/root-navigation/RootNavigator';
+
+//import * as RootNavigation from '../../../navigations/root-navigation/RootNavigator';
 
 function MessagesListItem() {
   return (
@@ -13,7 +14,7 @@ function MessagesListItem() {
         <View style={styles.containerView}>
           <TouchableOpacity
             style={styles.profilePictureView}
-            onPress={() => RootNavigation.navigate('ProfileDetails')}>
+           >
             <View style={styles.profilePicture}>
               <Icon name="user" size={30} color="#2680eb" />
             </View>

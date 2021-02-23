@@ -40,7 +40,8 @@ function MyTabBar({state, navigation}) {
         flexDirection: 'row',
         height: '9%',
         justifyContent: 'space-around',
-   
+        borderTopLeftRadius:20,
+        borderTopRightRadius:20, 
       }}>
       {state.routes.map((route, index) => {
         const isFocused = state.index === index;

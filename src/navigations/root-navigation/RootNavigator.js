@@ -9,15 +9,15 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-export const navigationRef = React.createRef();
+// export const navigationRef = React.createRef();
 
-export function navigate(name, params) {
-  navigationRef.current?.navigate(name, params);
-}
+// export function navigate(name, params) {
+//   navigationRef.current?.navigate(name, params);
+// }
 
 function RootNavigator() {
   return (
-    <NavigationContainer ref={navigationRef}>
+    <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
           name="Login"

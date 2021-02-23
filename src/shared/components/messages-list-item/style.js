@@ -3,14 +3,22 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
     containerView: {
     marginHorizontal: 28,
-    borderColor: 'black',
+    borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 20,
     marginBottom: 20,
     flexDirection: 'row',
+    backgroundColor:'white',
     paddingRight: 10,
     shadowColor: '#000',
-    
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 10,
+  
   },
   profilePictureView: {
     justifyContent: 'center',
