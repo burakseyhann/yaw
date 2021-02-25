@@ -9,7 +9,7 @@ function MatchesListItem({props}) {
     <FlatList 
       data={MATCHESDATA}
       renderItem={({item}) => (
-        <TouchableOpacity style={styles.containerView}>
+        <TouchableOpacity  activeOpacity={0.8} style={styles.containerView}>
           <View style={styles.profilePictureView}>
             <View style={styles.profilePicture}>
               <Icon name="user" size={30} color="#2680eb"  />

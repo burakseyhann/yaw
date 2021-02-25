@@ -11,7 +11,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     paddingRight: 10,
     shadowColor: '#000',
-    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2,

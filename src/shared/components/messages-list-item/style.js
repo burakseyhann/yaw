@@ -6,7 +6,7 @@ export default StyleSheet.create({
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 20,
-    marginBottom: 20,
+    marginVertical: 10,
     flexDirection: 'row',
     backgroundColor:'white',
     paddingRight: 10,
