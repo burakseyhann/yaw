@@ -1,86 +1,46 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import { Colors } from '../../shared/Styles/Color';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+
+import styles from './style'
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Line from '../../shared/components/line/Line';
 
 function Settings({navigation}) {
   return (
     <SafeAreaView style={styles.mainContainer}>
       <View style={styles.container}>
-      <View style={styles.headerView}>
-       <View style={styles.imageContainer}>
-        
-       </View>
-       <View style={styles.userDsc}>
-        <Text>
-         Deniz Ay
-        </Text>
-        <Text>
-         @de.nizay
-        </Text>
-       </View>
+        <View style={styles.headerView}>
+          <TouchableOpacity activeOpacity={0.6} style={styles.imageContainer}>
+            <Icon name="user" size={40} color="#2680eb" />
+          </TouchableOpacity>
+          <View style={styles.userDsc}>
+            <Text style={styles.nameText}>Deniz Ay</Text>
+            <Text style={styles.userNameText}>@de.nizay</Text>
+          </View>
+        </View>
+        <View style={styles.mainView}>
+          <TouchableOpacity activeOpacity={0.6} style={styles.settingsOption} onPress={()=>navigation.navigate('EditProfile')}>
+            <Icon name="pencil" size={25} color="#2680eb" />
+            <Text style={styles.iconText}>Düzenle</Text>
+          </TouchableOpacity >
+          <View style={styles.lineView}>
+            <Line descriptor={'AD'} description={'Deniz'} style={styles.line} />
+            <Line descriptor={'SOYAD'} description={'AY'}  style={styles.line} />
+            <Line descriptor={'KULLANICI ADI'} description={'@de.nizay'}  style={styles.line} />
+            <Line descriptor={'ŞİFRE'} description={'********'}  style={styles.line} />
+            <Line descriptor={'MAİL'} description={'deniz@gmail.com'}  style={styles.line} />
+            <Line descriptor={'EŞLEŞMELER'} description={'Karı'}  style={styles.line} />
+          </View>
+        </View>
       </View>
-      <View style={styles.mainView}>
-
-      </View>
-      </View>
-      
     </SafeAreaView>
   );
 }
 
 export default Settings;
-const styles=StyleSheet.create({
-  mainContainer:{
-    flex: 1,
-    paddingVertical:18,
-    paddingHorizontal:22,
-  },
-  container:{
-    flex: 1,
-    backgroundColor:'white',
-    borderWidth:1,
-    borderColor:Colors.grey,
-    borderRadius:30,
-    shadowColor: "#000",
-shadowOffset: {
-	width: 0,
-	height: 5,
-},
-shadowOpacity: 0.34,
-shadowRadius: 6.27,
-
-elevation: 10,
-overflow:'hidden'
-
-  },
-  headerView:{
-   flex:0.20,
-   backgroundColor:'red',
-   borderBottomWidth:1,
-   borderBottomColor:Colors.grey,
-   flexDirection:'row',
-   paddingHorizontal:16,
-   paddingVertical:25,
-  alignItems:'center',
-
-  },
-  imageContainer:{
-    backgroundColor:'yellow',
-   width:90,
-   height:90,
-   borderWidth:1,
-   borderRadius:100, 
-  },
-  userDsc:{
-    marginLeft:25,
-  
-    backgroundColor:'green'
-  },
-  mainView:{
-    flex:1,
-    backgroundColor:'blue',
-
- 
-  },
-
-});

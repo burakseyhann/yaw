@@ -12,14 +12,12 @@ function MessagesListItem() {
       data={MESSAGESDATA}
       renderItem={({item}) => (
         <View style={styles.containerView}>
-          <TouchableOpacity
-            style={styles.profilePictureView}
-           >
+          <TouchableOpacity activeOpacity={0.6} style={styles.profilePictureView}>
             <View style={styles.profilePicture}>
               <Icon name="user" size={30} color="#2680eb" />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.textView}>
+          <TouchableOpacity activeOpacity={0.6} style={styles.textView}>
             <Text style={styles.textUsername}>{item.username}</Text>
             <Text style={styles.textMatch}>{item.message}</Text>
           </TouchableOpacity>
