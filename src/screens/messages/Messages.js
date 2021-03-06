@@ -8,7 +8,7 @@ function Messages({navigation}) {
   return (
     <SafeAreaView style={styles.mainContainer}>
       <Questions />
-      <MessagesListItem />
+      <MessagesListItem onPress={()=>navigation.navigate('MessageDetails')}  />
     </SafeAreaView>
   );
 }

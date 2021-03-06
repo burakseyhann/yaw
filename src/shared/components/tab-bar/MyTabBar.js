@@ -2,11 +2,18 @@ import React from 'react';
 import {TouchableOpacity} from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-import {Colors} from '../../Styles/Color';
 import LinearGradient from 'react-native-linear-gradient';
 
-function MyTabBar({state, navigation}) {
+import {Colors} from '../../Styles/Color';
+
+
+function MyTabBar({state, navigation, descriptors}) {
+  // there is for  handle current Messages Detail route options
+  const focusedOptions = descriptors[state.routes[state.index].key].options;
+  if (focusedOptions.tabBarVisible === false) {
+    return null;
+  }
+    // Tab icon  
   function TabIcon(route, navigation, isFocused) {
     let iconName;
     if (route.name === 'Matches') {
@@ -20,7 +27,12 @@ function MyTabBar({state, navigation}) {
     return (
       <TouchableOpacity
         activeOpacity={1}
-        style={{flex: 1, alignItems: 'center',height:'100%',justifyContent:'center'}}
+        style={{
+          flex: 1,
+          alignItems: 'center',
+          height: '100%',
+          justifyContent: 'center',
+        }}
         key={route.name}
         onPress={() => navigation.navigate(route.name)}>
         <Icon
@@ -33,6 +45,8 @@ function MyTabBar({state, navigation}) {
       </TouchableOpacity>
     );
   }
+
+  // custom tab bar
   return (
     <LinearGradient
       colors={[Colors.main, Colors.second]}
@@ -40,8 +54,8 @@ function MyTabBar({state, navigation}) {
         flexDirection: 'row',
         height: '9%',
         justifyContent: 'space-around',
-        borderTopLeftRadius:20,
-        borderTopRightRadius:20, 
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
       }}>
       {state.routes.map((route, index) => {
         const isFocused = state.index === index;
