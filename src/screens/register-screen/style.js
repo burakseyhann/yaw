@@ -18,4 +18,9 @@ export default StyleSheet.create({
       paddingVertical: 33,
       flex: 3,
     },
+    signInButton:{
+      borderRadius: 25,
+      backgroundColor: '#2680eb',
+      marginBottom: 20,
+    },
   });

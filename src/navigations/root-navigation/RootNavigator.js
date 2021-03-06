@@ -3,11 +3,20 @@ import React from 'react';
 import LoginScreen from '../../screens/login-screen/LoginScreen';
 import RegisterScreen from '../../screens/register-screen/RegisterScreen';
 import TabBar from '../bottom-tab-bar-navigator/BottomTabBar';
+import MessageDetail from '../../screens/messages/message-detail/MessageDetail';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
+import headerOptions from '../../shared/components/header/MyHeader';
+
 const Stack = createStackNavigator();
+
+// export const navigationRef = React.createRef();
+
+// export function navigate(name, params) {
+//   navigationRef.current?.navigate(name, params);
+// }
 
 function RootNavigator() {
   return (

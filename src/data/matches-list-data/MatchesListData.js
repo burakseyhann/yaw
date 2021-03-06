@@ -1,4 +1,4 @@
-export const DATA = [
+export const MATCHESDATA = [
   {
     id: 'User-1',
     username: 'Sude',

@@ -4,7 +4,7 @@
      red:'rgb(235,14,14)',
      redSecond:'rgb(147,108,108)',
      white:'white',
-     grey:'grey',
+     grey:'rgb(172,172,172)',
      blue:'#2680eb',
      blueSecond:'rgb(77,150,238)'
 
