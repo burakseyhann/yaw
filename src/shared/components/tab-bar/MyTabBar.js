@@ -1,11 +1,11 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity,Dimensions} from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {Colors} from '../../Styles/Color';
 import LinearGradient from 'react-native-linear-gradient';
-
+let isBigScreen=Dimensions.get('window').height>600;
 function MyTabBar({state, navigation}) {
   function TabIcon(route, navigation, isFocused) {
     let iconName;
@@ -38,7 +38,7 @@ function MyTabBar({state, navigation}) {
       colors={[Colors.main, Colors.second]}
       style={{
         flexDirection: 'row',
-        height: '9%',
+        height:isBigScreen?'9%':'11%',
         justifyContent: 'space-around',
         borderTopLeftRadius:20,
         borderTopRightRadius:20, 

@@ -1,8 +1,12 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity,Dimensions} from 'react-native';
 import {Colors} from '../../Styles/Color';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { isEnabled } from 'react-native/Libraries/Performance/Systrace';
+
+let height=Dimensions.get('window').height;
+let isBigScreen=Dimensions.get('window').height>600;
 
 function MyBackButton(props) {
   return (
@@ -19,12 +23,12 @@ function MyHeader(props) {
   return (
     <LinearGradient
       colors={[Colors.main, Colors.second]}
-      style={{height: 90, flexDirection: 'row', alignItems: 'center'}}>
+      style={{height:isBigScreen?90:75, flexDirection: 'row', alignItems: 'center'}}>
       {props.leftButton}
       <View
         style={{
-          width: 55,
-          height: 55,
+          width:isBigScreen?(height/13) :(height/10),
+          height: isBigScreen?(height/13) :(height/10),
           borderWidth: 2,
           borderColor: 'rgb(253,132,163)',
           borderRadius: 50,

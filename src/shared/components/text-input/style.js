@@ -1,15 +1,17 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet,Dimensions} from 'react-native';
+
+let isBigScreen=Dimensions.get('window').height>600
 
 export default StyleSheet.create({
   textInput: {
     flexDirection: 'row',
     alignItems:'center',
-  
+    height:isBigScreen?60:44,
     backgroundColor: 'white',
     borderRadius: 20,
-    paddingVertical: 3,
-    paddingHorizontal: 16,
-    marginBottom: 17,
+    paddingVertical:isBigScreen?3:0,
+    paddingHorizontal:16,
+    marginBottom: isBigScreen?17:8,
     borderWidth: 1,
     borderColor: '#707070',
     shadowColor: '#000',

@@ -1,14 +1,16 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet,Dimensions} from 'react-native';
+let isBigScreen=Dimensions.get('window').height>600;
 export default StyleSheet.create({
   containerView: {
-  marginHorizontal: 28,
+  marginHorizontal:isBigScreen?28:20,
   borderColor: 'gray',
   borderWidth: 1,
   borderRadius: 20,
-  marginVertical: 10,
+  alignItems:'center',
+  height:isBigScreen?85:63,
+  marginVertical:isBigScreen?10:7,
   flexDirection: 'row',
   backgroundColor:'white',
-  paddingRight: 10,
   shadowColor: '#000',
   shadowOffset: {
     width: 0,
@@ -22,15 +24,15 @@ export default StyleSheet.create({
 profilePictureView: {
   justifyContent: 'center',
   alignItems: 'center',
-  paddingTop: 15,
-  paddingBottom: 15,
+  paddingTop:isBigScreen?15:0,
+  paddingBottom:isBigScreen?15:0,
   flex: 1,
   borderTopLeftRadius: 20,
   borderBottomLeftRadius: 20,
 },
 profilePicture: {
-  width: 50,
-  height: 50,
+  width:isBigScreen?60:45,
+  height: isBigScreen?60:45,
   borderRadius: 50,
   justifyContent: 'center',
   alignItems: 'center',
@@ -45,11 +47,11 @@ textView: {
   paddingBottom: 15,
 },
 textUsername: {
-  fontSize: 20,
+  fontSize:isBigScreen?20:14,
   fontWeight: 'bold',
 },
 textMatch: {
-  fontSize: 16,
+  fontSize:isBigScreen?17:13,
   opacity: 0.5,
 },
 });

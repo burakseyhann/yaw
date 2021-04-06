@@ -1,7 +1,8 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet,Dimensions} from 'react-native';
 
 import {Colors} from '../../shared/Styles/Color'
 
+let isBigScreen=Dimensions.get('window').height>600;
 export default StyleSheet.create({
   headerContainer: {
     flex: 3,
@@ -41,15 +42,16 @@ export default StyleSheet.create({
   signInButton:{
     borderRadius: 25,
     backgroundColor: '#2680eb',
-    marginBottom: 20,
+    marginBottom:isBigScreen?20:14,
   },
   forgotPassword: {
     marginTop: 22,
     alignItems: 'center',
     justifyContent: 'center',
+
   },
   text: {
-    fontSize: 20,
+    fontSize:isBigScreen?20:16,
     fontStyle: 'italic',
     color:Colors.grey
   },
@@ -60,6 +62,6 @@ export default StyleSheet.create({
   signUpText: {
     color: Colors.blue,
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: isBigScreen?20:16,
   },
 });
