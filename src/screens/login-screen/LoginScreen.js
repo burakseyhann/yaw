@@ -28,7 +28,7 @@ function LoginScreen({navigation}) {
   const [password, setPassword] = useState('');
   const [passwordVisible, setPasswordVisible] = useState(true);
   const [iconEye, setIconEye] = useState(false);
-
+  let isBigScreen=height>600;
   useEffect(() => {
     Keyboard.addListener('keyboardDidShow', _keyboardDidShow);
     Keyboard.addListener('keyboardDidHide', _keyboardDidHide);
@@ -59,7 +59,7 @@ function LoginScreen({navigation}) {
           <LinearGradient
             colors={[Colors.main, Colors.second]}
             style={styles.headerContainer}>
-            <LogoView label="LOGO" width={height / 5} height={height / 5} />
+            <LogoView label="LOGO" width={isBigScreen?(height / 5):(height/6)} height={isBigScreen?(height / 5):(height/6)} />
           </LinearGradient>
           <View style={styles.mainContainer}>
             <CustomTextInput
@@ -76,7 +76,7 @@ function LoginScreen({navigation}) {
                 value={password}
                 onChangeText={(item) => setPassword(item)}
                 iconName={iconEye ? 'eye' : 'eye-slash'}
-                iconSize={20}
+                iconSize={isBigScreen?20:14}
                 iconColor={'gray'}
                 onPress={() => {
                   //for vsible or hide the password

@@ -13,7 +13,8 @@ function CustomTextInput(props) {
       secureTextEntry={props.secureTextEntry}
       autoCorrect={props.autoCorrect}
       keyboardType={props.keyboardType}
-      style={{width:'100%'}}
+      underlineColorAndroid={'#FFF'}
+      style={{width:'100%',borderWidth:0}}
      
     />
      <Icon style={styles.icon} name={props.iconName} size={props.iconSize} color={props.iconColor} onPress={props.onPress} />

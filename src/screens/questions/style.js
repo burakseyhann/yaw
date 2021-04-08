@@ -1,5 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet,Dimensions} from 'react-native';
 
+let isBigScreen=Dimensions.get('window').height>600;
 export default StyleSheet.create({
   modal: {
     flex: 1,
@@ -29,8 +30,8 @@ export default StyleSheet.create({
   buttons: {width: '100%', height: '100%'},
   itemContainer: {
     backgroundColor: 'white',
-    width: '80%',
-    height: '35%',
+    width: isBigScreen?'80%':'65%',
+    height: isBigScreen?'35%':'38%',
     borderRadius: 25,
     shadowColor: '#000',
     shadowOffset: {
