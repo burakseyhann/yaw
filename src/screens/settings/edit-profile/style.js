@@ -63,9 +63,10 @@ export default StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
+    marginBottom:15
   },
   button: {
-    borderRadius: 20,
+    borderRadius: 30,
     marginTop: 25,
     width: '40%',
   },

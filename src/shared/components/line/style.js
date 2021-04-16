@@ -1,4 +1,7 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet,Dimensions} from 'react-native';
+
+let isBigScreen=Dimensions.get('window').height>600;
+
 import { Colors } from '../../Styles/Color';
 export default StyleSheet.create({
     line: {
@@ -7,11 +10,11 @@ export default StyleSheet.create({
         paddingHorizontal:5,
       },
       descriptor:{
-        fontSize:16,
+        fontSize:isBigScreen?15:13,
         color: Colors.grey,
       },
       description:{
-        fontSize:17,
+        fontSize:isBigScreen?17:14,
         color:'black'
       }
 });

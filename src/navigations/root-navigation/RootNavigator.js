@@ -1,7 +1,9 @@
 import React from 'react';
 
 import LoginScreen from '../../screens/login-screen/LoginScreen';
-import RegisterScreen from '../../screens/register-screen/RegisterScreen';
+import RegisterScreenFirstStep from '../../screens/register-screen/resgister-first-step/RegisterScreenFirstStep';
+import RegisterScreenSecondStep from '../../screens/register-screen/register-second-step/RegisterScreenSecondStep';
+import RegisterScreenThirdStep from '../../screens/register-screen/resgister-third-step/RegisterScreenThirdStep';
 import TabBar from '../bottom-tab-bar-navigator/BottomTabBar';
 
 import {NavigationContainer} from '@react-navigation/native';
@@ -25,8 +27,18 @@ function RootNavigator() {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="Register"
-          component={RegisterScreen}
+          name="RegisterFirst"
+          component={RegisterScreenFirstStep}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="RegisterSecond"
+          component={RegisterScreenSecondStep}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="RegisterThird"
+          component={RegisterScreenThirdStep}
           options={{headerShown: false}}
         />
         <Stack.Screen

@@ -1,12 +1,14 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet,Dimensions} from 'react-native';
+
+let isBigScreen=Dimensions.get('window').height>600;
 
 import {Colors} from '../../shared/Styles/Color';
 
 export default StyleSheet.create({
   mainContainer: {
     flex: 1,
-    paddingVertical: 18,
-    paddingHorizontal: 22,
+    paddingVertical:isBigScreen?18:15,
+    paddingHorizontal:isBigScreen?22:28,
   },
   container: {
     flex: 1,
@@ -25,17 +27,18 @@ export default StyleSheet.create({
     overflow: 'hidden',
   },
   headerView: {
-    flex: 0.2,
+    flex:isBigScreen?0.2:0.4,
     borderBottomWidth: 1,
     borderBottomColor: Colors.grey,
     flexDirection: 'row',
-    paddingHorizontal: 16,
-    paddingVertical: 25,
+    paddingHorizontal:isBigScreen?16:10,
+    paddingVertical:isBigScreen?25:16,
     alignItems: 'center',
+    justifyContent:'space-between',
   },
   imageContainer: {
-    width: 85,
-    height: 85,
+    width:isBigScreen?85:65,
+    height:isBigScreen?85:65,
     borderWidth: 1,
     borderColor: Colors.blue,
     borderRadius: 100,
@@ -43,36 +46,37 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   userDsc: {
-    marginLeft: 25,
-    paddingTop: 5,
+    marginRight:isBigScreen?15:13,
+    paddingTop:isBigScreen?5:3,
   },
   nameText: {
-    fontSize: 17,
+    fontSize:isBigScreen?17:14,
   },
   userNameText: {
-    fontSize: 15,
-    marginTop: 6,
+    fontSize:isBigScreen?15:13,
+    marginTop:isBigScreen?6:3,
     color: Colors.grey,
   },
   mainView: {
     flex: 1,
-    paddingHorizontal: 16,
-    paddingTop: 30,
+    paddingHorizontal:isBigScreen?16:10,
+    paddingTop:isBigScreen?30:10,
   },
   settingsOption: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
+    alignSelf:'flex-start',
   },
   iconText: {
-    fontSize: 17,
+    fontSize:isBigScreen?16:14,
     color: Colors.blue,
-    marginLeft: 8,
+    marginLeft: isBigScreen?8:5,
   },
   lineView: {
-    marginTop: 20,
+    marginTop:isBigScreen?20:15,
   },
   line: {
-    marginBottom: 30,
+    marginBottom:isBigScreen?30:25,
   },
 });

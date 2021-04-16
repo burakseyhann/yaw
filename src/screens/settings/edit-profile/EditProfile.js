@@ -16,6 +16,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './style';
 import {Colors} from '../../../shared/Styles/Color';
 import CustomButton from '../../../shared/components/button/CustomButton';
+import { ScrollView } from 'react-native-gesture-handler';
 
 function EditProfile(props) {
   const [name, setName] = useState('');
@@ -45,6 +46,7 @@ function EditProfile(props) {
           </TouchableOpacity>
         </View>
         <View style={styles.desriptorContainer}>
+          <ScrollView>
           <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             keyboardVerticalOffset={-100}>
@@ -96,12 +98,26 @@ function EditProfile(props) {
               value={choice}
               onChangeText={(value) => setChoice(value)}
             />
+                        <TextInput
+              placeholder={'EŞLEŞMELER:'}
+              style={styles.input}
+              value={choice}
+              onChangeText={(value) => setChoice(value)}
+            />
+                        <TextInput
+              placeholder={'EŞLEŞMELER:'}
+              style={styles.input}
+              value={choice}
+              onChangeText={(value) => setChoice(value)}
+            />
           </KeyboardAvoidingView>
           <View style={styles.buttonContainer}>
             <CustomButton activeOpacity={0.8} label={'Kaydet'} style={{...styles.button,...styles.acceptButton}}/>
             <CustomButton activeOpacity={0.8} label={'İptal'} style={{...styles.button,...styles.rejectButton}}/>
           </View>
+          </ScrollView>
         </View>
+        
       </View>
       </TouchableWithoutFeedback>
     </SafeAreaView>
