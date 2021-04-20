@@ -1,12 +1,13 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet,Dimensions} from 'react-native';
 
 import {Colors} from '../../../shared/Styles/Color';
 
+let isBigScreen=Dimensions.get('window').height>600;
 export default StyleSheet.create({
   mainContainer: {
     flex: 1,
-    paddingVertical: 18,
-    paddingHorizontal: 22,
+    paddingVertical:isBigScreen?18:15,
+    paddingHorizontal:isBigScreen?22:28,
   },
   itemContainer: {
     flex: 1,
@@ -25,15 +26,15 @@ export default StyleSheet.create({
     overflow: 'hidden',
   },
   imageContainer: {
-    flex: 0.25,
+    flex:isBigScreen?0.25:0.4,
     alignItems: 'center',
     justifyContent: 'center',
     borderBottomWidth: 2,
     borderBottomColor: Colors.grey,
   },
   imageCircle: {
-    width: 100,
-    height: 100,
+    width:isBigScreen?100:75,
+    height:isBigScreen?100:75,
     borderWidth: 1,
     borderColor: Colors.blue,
     borderRadius: 100,
@@ -48,26 +49,30 @@ export default StyleSheet.create({
   },
   imagesText: {
     color: Colors.blue,
+    fontSize:isBigScreen?15:11
   },
   desriptorContainer: {
     flex: 0.75,
-    paddingHorizontal: 16,
-    paddingTop: 20,
+    paddingHorizontal:isBigScreen?16:10,
+    paddingTop:isBigScreen?20:10,
   },
   input: {
-    marginBottom: 10,
+    marginBottom:isBigScreen?10:6,
     borderBottomWidth: 1,
     borderBottomColor: Colors.blue,
-    paddingHorizontal: 5,
+    paddingHorizontal:5,
+    paddingBottom:isBigScreen?5:2
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
+    marginBottom:15
   },
   button: {
-    borderRadius: 20,
-    marginTop: 25,
-    width: '40%',
+    borderRadius:isBigScreen?30:18,
+    marginTop:isBigScreen?25:20,
+    width:isBigScreen?'40%':'37%',
+    height:isBigScreen?43:37
   },
   acceptButton: {
     backgroundColor: Colors.blue,

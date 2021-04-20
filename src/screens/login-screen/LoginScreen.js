@@ -112,7 +112,7 @@ function LoginScreen({navigation}) {
             <Text style={styles.text}>Henüz bir hesabın yok mu? </Text>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('Register');
+                navigation.navigate('RegisterFirst');
               }}>
               <Text style={styles.signUpText}>Kayıt ol</Text>
             </TouchableOpacity>

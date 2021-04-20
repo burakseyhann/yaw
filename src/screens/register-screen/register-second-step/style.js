@@ -1,6 +1,6 @@
-import {StyleSheet } from 'react-native'
+import {StyleSheet } from 'react-native';
 
-import {Colors} from '../../shared/Styles/Color'
+import {Colors} from '../../../shared/Styles/Color'
 export default StyleSheet.create({
     container: {
       flex: 1,
@@ -19,8 +19,10 @@ export default StyleSheet.create({
       flex: 3,
     },
     signInButton:{
-      borderRadius: 25,
+      borderRadius: 10,
       backgroundColor: '#2680eb',
-      marginBottom: 20,
+      width:'20%',
+      alignSelf:'flex-end',
+      height:40
     },
   });

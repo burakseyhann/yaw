@@ -12,12 +12,12 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 
 import styles from './style';
-import {Colors} from '../../shared/Styles/Color';
-import LogoView from '../../shared/components/logo/LogoView';
-import CustomTextInput from '../../shared/components/text-input/CustomTextInput';
-import CustomButton from '../../shared/components/button/CustomButton';
+import {Colors} from '../../../shared/Styles/Color';
+import LogoView from '../../../shared/components/logo/LogoView';
+import CustomTextInput from '../../../shared/components/text-input/CustomTextInput';
+import CustomButton from '../../../shared/components/button/CustomButton';
 
-function RegisterScreen({navigation}) {
+function RegisterScreenFirstStep({navigation}) {
   const [width, setWidth] = useState(Dimensions.get('window').width);
   const [height, setHeight] = useState(Dimensions.get('window').height);
   const [userName, setUserName] = useState('');
@@ -59,41 +59,11 @@ function RegisterScreen({navigation}) {
               keyboardType="visible-password"
               onChangeText={(item) => setUserName(item)}
             />
-            <View>
-              <CustomTextInput
-                placeholder="Şifre"
-                secureTextEntry={passwordVisible}
-                autoCorrect={false}
-                value={password}
-                onChangeText={(item) => setPassword(item)}
-                iconName={iconEye ? 'eye' : 'eye-slash'}
-                iconSize={20}
-                iconColor={iconEye?  Colors.blue :Colors.grey }
-                onPress={() => {
-                  //for vsible or hide the password
-                  setPasswordVisible(!passwordVisible);
-                  setIconEye(!iconEye);
-                }}
-              />
-            </View>
-            <CustomTextInput
-              placeholder="mail"
-              value={mail}
-              keyboardType="visible-password"
-              onChangeText={(item) => setMail(item)}
-              autoCorrect={false}
-            />
-            <CustomTextInput
-              placeholder="Seni Kimler Görsün"
-              value={choice}
-              keyboardType="visible-password"
-              onChangeText={(item) => setChoice(item)}
-            />
             <CustomButton
             style={styles.signInButton}
-              label="Kayıt Ol"
+              label="İleri"
               onPress={() => {
-                navigation.navigate('Home');
+                navigation.navigate('RegisterSecond');
               }}
             />
           </View>
@@ -103,4 +73,4 @@ function RegisterScreen({navigation}) {
   );
 }
 
-export default RegisterScreen;
+export default RegisterScreenFirstStep;

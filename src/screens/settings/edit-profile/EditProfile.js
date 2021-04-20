@@ -9,7 +9,9 @@ import {
   KeyboardAvoidingView,
   Platform,
   Keyboard,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  ScrollView,
+  Dimensions
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -17,6 +19,8 @@ import styles from './style';
 import {Colors} from '../../../shared/Styles/Color';
 import CustomButton from '../../../shared/components/button/CustomButton';
 
+
+let isBigScreen=Dimensions.get('window').height>600;
 function EditProfile(props) {
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -34,7 +38,7 @@ function EditProfile(props) {
             <View style={{flex: 0.75, justifyContent: 'center'}}>
               <Icon
                 name="user"
-                size={40}
+                size={isBigScreen?40:30}
                 color="#2680eb"
                 style={{alignSelf: 'center'}}
               />
@@ -45,23 +49,24 @@ function EditProfile(props) {
           </TouchableOpacity>
         </View>
         <View style={styles.desriptorContainer}>
+          <ScrollView>
           <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             keyboardVerticalOffset={-100}>
             <TextInput
-              placeholder={'AD:'}
+              placeholder={'Ad:'}
               style={styles.input}
               value={name}
               onChangeText={(value) => setName(value)}
             />
             <TextInput
-              placeholder={'SOYAD:'}
+              placeholder={'soyad:'}
               style={styles.input}
               value={lastName}
               onChangeText={(value) => setLastName(value)}
             />
             <TextInput
-              placeholder={'KULLANICI ADI:'}
+              placeholder={'Kullanıcı Adı:'}
               style={styles.input}
               value={userName}
               onChangeText={(value) => setUserName(value)}
@@ -69,7 +74,7 @@ function EditProfile(props) {
             <View
               style={{flexDirection: 'row', justifyContent: 'space-around'}}>
               <TextInput
-                placeholder={'ŞİFRE:'}
+                placeholder={'Şifre:'}
                 autoCorrect={false}
                 secureTextEntry={showPass}
                 style={{...styles.input, width: '100%'}}
@@ -78,30 +83,33 @@ function EditProfile(props) {
               />
               <Icon
                 name={showPass ? 'eye-slash' : 'eye'}
-                size={20}
+                size={isBigScreen?20:15}
                 color={showPass ? Colors.grey : Colors.blue}
-                style={{position: 'absolute', right: 5, top: 10}}
+                style={{position: 'absolute', right:isBigScreen?5:3, top:isBigScreen?10:15}}
                 onPress={() => setShowPass(!showPass)}
               />
             </View>
             <TextInput
-              placeholder={'MAİL:'}
+              placeholder={'mail:'}
               style={styles.input}
               value={mail}
               onChangeText={(value) => setMail(value)}
             />
             <TextInput
-              placeholder={'EŞLEŞMELER:'}
+              placeholder={'Eşleşmeler:'}
               style={styles.input}
               value={choice}
               onChangeText={(value) => setChoice(value)}
             />
+
           </KeyboardAvoidingView>
           <View style={styles.buttonContainer}>
             <CustomButton activeOpacity={0.8} label={'Kaydet'} style={{...styles.button,...styles.acceptButton}}/>
             <CustomButton activeOpacity={0.8} label={'İptal'} style={{...styles.button,...styles.rejectButton}}/>
           </View>
+          </ScrollView>
         </View>
+        
       </View>
       </TouchableWithoutFeedback>
     </SafeAreaView>
