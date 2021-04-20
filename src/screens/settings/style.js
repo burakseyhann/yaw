@@ -60,7 +60,7 @@ export default StyleSheet.create({
   mainView: {
     flex: 1,
     paddingHorizontal:isBigScreen?16:10,
-    paddingTop:isBigScreen?30:10,
+    paddingTop:isBigScreen?30:8,
   },
   settingsOption: {
     flexDirection: 'row',
@@ -77,6 +77,6 @@ export default StyleSheet.create({
     marginTop:isBigScreen?20:15,
   },
   line: {
-    marginBottom:isBigScreen?30:25,
+    marginBottom:isBigScreen?30:17,
   },
 });

@@ -29,7 +29,7 @@ function Settings({navigation}) {
             <Text style={styles.userNameText}>@de.nizay</Text>
           </View>
           <TouchableOpacity activeOpacity={0.6} style={styles.settingsOption} onPress={()=>navigation.navigate('EditProfile')}>
-            <Icon name="pencil" size={isBigScreen?24:20} color="#2680eb" />
+            <Icon name="pencil" size={isBigScreen?24:18} color="#2680eb" />
             <Text style={styles.iconText}>Düzenle</Text>
           </TouchableOpacity >
         </View>

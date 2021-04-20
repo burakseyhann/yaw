@@ -8,6 +8,7 @@ export default StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: Colors.blue,
         paddingHorizontal:5,
+       paddingBottom:3
       },
       descriptor:{
         fontSize:isBigScreen?15:13,
