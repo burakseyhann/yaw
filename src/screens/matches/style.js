@@ -42,6 +42,7 @@ export default StyleSheet.create({
   },
   textView: {
     flex: 3.5,
+    justifyContent:'center',
     borderTopRightRadius: 20,
     borderBottomRightRadius: 20,
     paddingTop: 15,
