@@ -13,6 +13,7 @@ function Messages({navigation}) {
       data={MESSAGESDATA}
       renderItem={({item}) => (
         <View style={styles.containerView}>
+        <View style={styles.itemContainerView}>
           <TouchableOpacity activeOpacity={0.6} style={styles.profilePictureView} onPress={()=>navigation.navigate('ProfileDetails')}>
             <View style={styles.profilePicture}>
               <Icon name="user" size={isBigScreen?30:25} color="#2680eb" />
@@ -22,6 +23,7 @@ function Messages({navigation}) {
             <Text style={styles.textUsername}>{item.username}</Text>
             <Text style={styles.textMatch}>{item.message}</Text>
           </TouchableOpacity>
+        </View>
         </View>
       )}
       keyExtractor={(item) => item.id}
