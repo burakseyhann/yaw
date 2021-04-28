@@ -8,9 +8,11 @@ function Matches({navigation}) {
   return (
     <SafeAreaView style={styles.mainContainer}>
   <FlatList 
+  numColumns={2}
       data={MATCHESDATA}
       renderItem={({item}) => (
-        <TouchableOpacity  activeOpacity={0.8} style={styles.containerView}>
+        <View style={styles.containerView}>
+        <TouchableOpacity  activeOpacity={0.8} style={styles.itemContainer}>
           <View style={styles.profilePictureView}>
             <View style={styles.profilePicture}>
               <Icon name="user" size={isBigScreen?30:25} color="#2680eb"  />
@@ -18,9 +20,10 @@ function Matches({navigation}) {
           </View>
           <View style={styles.textView}>
             <Text style={styles.textUsername}>{item.username}</Text>
-            <Text style={styles.textMatch}>{item.message}</Text>
+            <Text numberOfLines={2} ellipsizeMode={'tail'} style={styles.textMatch}>{item.message}</Text>
           </View>
         </TouchableOpacity>
+        </View>
       )}
       keyExtractor={(item) => item.id}
     />

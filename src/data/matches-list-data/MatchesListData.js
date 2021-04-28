@@ -7,7 +7,7 @@ export const MATCHESDATA = [
   {
     id: 'User-2',
     username: 'Deniz',
-    message: '%70 eşleşme, Diyarrrbakırlıymış adı Bahtiyar',
+    message: '%70 eşleşme, Diyarrrbakırlıymış adı Bahtiyar şlasfkşlk saşlfkşas. fşalskfşlask aşslfkşlsakşfl ashlaksf asfjklkas fsalkjflkaj sakldjalsf alsjfşj aslfjşlaksf',
   },
   {
     id: 'User-3',
