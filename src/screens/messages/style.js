@@ -7,9 +7,8 @@ export default StyleSheet.create({
    paddingVertical:isBigScreen?10:7,
   
   },
-
   itemContainerView: {
-  borderColor: 'gray',
+  borderColor: '#d1cccc',
   borderWidth: 1,
   borderRadius: 20,
   alignItems:'center',
@@ -41,7 +40,6 @@ profilePicture: {
   borderWidth: 1.5,
 },
 textView: {
-
 },
 textUsername: {
   fontSize:isBigScreen?20:14,

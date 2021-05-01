@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity,Dimensions} from 'react-native';
+import {View, Text, TouchableOpacity,Dimensions, SafeAreaView} from 'react-native';
 import {Colors} from '../../Styles/Color';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -21,6 +21,7 @@ function MyBackButton(props) {
 
 function MyHeader(props) {
   return (
+    <SafeAreaView>
     <LinearGradient
       colors={[Colors.main, Colors.second]}
       style={{height:isBigScreen?90:75, flexDirection: 'row', alignItems: 'center'}}>
@@ -40,6 +41,8 @@ function MyHeader(props) {
       </View>
       <Text>{props.title}</Text>
     </LinearGradient>
+    </SafeAreaView>
+
   );
 }
 
