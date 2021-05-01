@@ -1,17 +1,17 @@
-import {StyleSheet,Dimensions} from 'react-native';
-let isBigScreen=Dimensions.get('window').height>600;
+import {StyleSheet, Dimensions} from 'react-native';
+
+import  {Colors} from '../../shared/Styles/Color';
+
+let isBigScreen = Dimensions.get('window').height > 600;
 export default StyleSheet.create({
-  containerView: {
-    marginHorizontal:isBigScreen?28:20,
-    backgroundColor:'white',
-    borderColor: 'gray',
+  itemContainer: {
+    width: isBigScreen?'45%':'46%',
+    height:isBigScreen?190:165,
+    marginBottom: 15,
+    borderColor:isBigScreen? '#F6F6F6':'#d1cccc',
     borderWidth: 1,
     borderRadius: 20,
-    alignItems:'center',
-    height:isBigScreen?85:63,
-    marginVertical:isBigScreen?10:7,
-    flexDirection: 'row',
-    paddingRight: 10,
+    backgroundColor: 'white',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -19,41 +19,49 @@ export default StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-   elevation: 10,
-    
+    elevation: 8,
+    overflow: 'hidden',
   },
-  profilePictureView: {
-    justifyContent: 'center',
+  headerContainer: {
+    flex:isBigScreen?0.45:0.4,
+    flexDirection: 'row',
     alignItems: 'center',
-    paddingTop:isBigScreen?15:0,
-    paddingBottom:isBigScreen?15:0,
-    flex: 1,
-    borderTopLeftRadius: 20,
-    borderBottomLeftRadius: 20,
+    paddingHorizontal:isBigScreen?5:10,
   },
-  profilePicture: {
-    width:isBigScreen?60:45,
-    height: isBigScreen?60:45,
+  imageContainer: {
+    width:isBigScreen?55:40,
+    height:isBigScreen?55:40,
+    borderWidth: 1,
+    borderColor: Colors.blue,
     borderRadius: 50,
-    justifyContent: 'center',
     alignItems: 'center',
-    borderColor: '#2680eb',
-    borderWidth: 1.5,
+    justifyContent: 'center',
   },
-  textView: {
-    flex: 3.5,
-    justifyContent:'center',
-    borderTopRightRadius: 20,
-    borderBottomRightRadius: 20,
-    paddingTop: 15,
-    paddingBottom: 15,
+  nameTextView: {
+    marginLeft: 5,
   },
-  textUsername: {
-    fontSize:isBigScreen?20:14,
+  nameText: {
+    fontSize:isBigScreen?18:14,
     fontWeight: 'bold',
   },
-  textMatch: {
-    fontSize:isBigScreen?17:13,
+  mainContainer: {
+    flex:isBigScreen?0.55:0.7,
+    paddingHorizontal:isBigScreen?0:3,
+  },
+  matchesText: {
+    alignSelf: 'center',
     opacity: 0.5,
+    fontSize:isBigScreen?14:12
+  },
+  messageText: {
+    alignSelf: 'center',
+    marginTop:3,
+    fontSize:isBigScreen?14:12
+  },
+  messageButton: {
+    color: Colors.blue,
+    marginTop:isBigScreen?15:18,
+    alignSelf: 'center',
+    fontSize:isBigScreen?15:13
   },
 });
