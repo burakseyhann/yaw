@@ -71,35 +71,11 @@ function EditProfile(props) {
               value={userName}
               onChangeText={(value) => setUserName(value)}
             />
-            <View
-              style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-              <TextInput
-                placeholder={'Şifre:'}
-                autoCorrect={false}
-                secureTextEntry={showPass}
-                style={{...styles.input, width: '100%'}}
-                value={password}
-                onChangeText={(value) => setPassword(value)}
-              />
-              <Icon
-                name={showPass ? 'eye-slash' : 'eye'}
-                size={isBigScreen?20:15}
-                color={showPass ? Colors.grey : Colors.blue}
-                style={{position: 'absolute', right:isBigScreen?5:3, top:isBigScreen?10:15}}
-                onPress={() => setShowPass(!showPass)}
-              />
-            </View>
             <TextInput
               placeholder={'mail:'}
               style={styles.input}
               value={mail}
               onChangeText={(value) => setMail(value)}
-            />
-            <TextInput
-              placeholder={'Eşleşmeler:'}
-              style={styles.input}
-              value={choice}
-              onChangeText={(value) => setChoice(value)}
             />
 
           </KeyboardAvoidingView>
