@@ -28,13 +28,14 @@ export default StyleSheet.create({
   },
   headerView: {
     flex:isBigScreen?0.2:0.4,
-    borderBottomWidth: 1,
+    borderBottomWidth: 1.5,
     borderBottomColor: Colors.grey,
     flexDirection: 'row',
     paddingHorizontal:isBigScreen?16:10,
     paddingVertical:isBigScreen?25:16,
     alignItems: 'center',
-    justifyContent:'space-between',
+ 
+   
   },
   imageContainer: {
     width:isBigScreen?85:65,
@@ -46,7 +47,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   userDsc: {
-    marginRight:isBigScreen?15:13,
+    marginLeft:isBigScreen?15:13,
     paddingTop:isBigScreen?5:3,
   },
   nameText: {
@@ -57,26 +58,32 @@ export default StyleSheet.create({
     marginTop:isBigScreen?6:3,
     color: Colors.grey,
   },
-  mainView: {
-    flex: 1,
-    paddingHorizontal:isBigScreen?16:10,
-    paddingTop:isBigScreen?30:8,
+  bodyContainer: {
+    flex:isBigScreen?0.8:0.6,
+    paddingVertical:isBigScreen?18:15,
+    paddingHorizontal:isBigScreen?22:28,
+   
+    
   },
-  settingsOption: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    alignSelf:'flex-start',
+  itemContainer: { 
+    height:50,  
+    paddingHorizontal:5,
+     flexDirection:'row',
+    //backgroundColor:'red',
+    justifyContent:'space-between',
+    alignItems:'center',
+    borderLeftWidth:2,
+    //borderRadius:5,
+    borderColor:Colors.blue,
+    marginBottom:18
+  
   },
-  iconText: {
-    fontSize:isBigScreen?16:14,
-    color: Colors.blue,
-    marginLeft: isBigScreen?8:5,
+  settingOptionsText:{
+    width:'85%',
+    fontSize:15,
+    fontWeight:'600'
   },
-  lineView: {
-    marginTop:isBigScreen?20:15,
-  },
-  line: {
-    marginBottom:isBigScreen?30:17,
+  iconButton:{
+    width:'15%'
   },
 });

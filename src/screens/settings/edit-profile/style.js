@@ -69,7 +69,7 @@ export default StyleSheet.create({
     marginBottom:15
   },
   button: {
-    borderRadius:isBigScreen?30:18,
+    borderRadius:isBigScreen?10:18,
     marginTop:isBigScreen?25:20,
     width:isBigScreen?'40%':'37%',
     height:isBigScreen?43:37
