@@ -19,6 +19,7 @@ export default StyleSheet.create({
       flex: 3,
     },
     signInButton:{
+      marginRight:10,
       borderRadius: 10,
       backgroundColor: '#2680eb',
       width:'20%',

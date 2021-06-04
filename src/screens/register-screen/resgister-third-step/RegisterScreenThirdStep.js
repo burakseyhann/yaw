@@ -14,18 +14,14 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from './style';
 import {Colors} from '../../../shared/Styles/Color';
 import LogoView from '../../../shared/components/logo/LogoView';
-import CustomTextInput from '../../../shared/components/text-input/CustomTextInput';
+import {Picker} from '@react-native-picker/picker';
+
 import CustomButton from '../../../shared/components/button/CustomButton';
 
 function RegisterScreenThirdStep({navigation}) {
   const [width, setWidth] = useState(Dimensions.get('window').width);
   const [height, setHeight] = useState(Dimensions.get('window').height);
-  const [userName, setUserName] = useState('');
-  const [name, setName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [password, setPassword] = useState('');
-  const [mail, setMail] = useState('');
-  const [choice, setChoice] = useState('');
+  const [selectedLanguage, setSelectedLanguage] = useState('selam');
 
   const [passwordVisible, setPasswordVisible] = useState(true);
   const [iconEye, setIconEye] = useState(false);
@@ -39,28 +35,24 @@ function RegisterScreenThirdStep({navigation}) {
             style={styles.headerContainer}>
             <LogoView label="LOGO" width={height / 5} height={height / 5} />
           </LinearGradient>
-          
+
           <View style={styles.mainContainer}>
-            <CustomTextInput
-              placeholder="Seni Kimler Görsün"
-              value={choice}
-              keyboardType="visible-password"
-              onChangeText={(item) => setChoice(item)}
-            />
-            <CustomTextInput
-              placeholder="Doğum Tarihi"
-              value={choice}
-              keyboardType="visible-password"
-              onChangeText={(item) => setChoice(item)}
-            />
-             <CustomTextInput
-              placeholder="Profil resmi"
-              value={choice}
-              keyboardType="visible-password"
-              onChangeText={(item) => setChoice(item)}
-            />
+            <View style={{borderWidth:1,borderColor:'black',borderRadius:50,width:'95%',alignSelf:'center',marginBottom:20}}>
+            <Picker
+              selectedValue={selectedLanguage}
+              onValueChange={(itemValue, itemIndex) =>
+                setSelectedLanguage(itemValue)
+              }
+
+              >
+              <Picker.Item label="Kadın" value="Kadın" />
+              <Picker.Item label="Erkek" value="Erkek" />
+              <Picker.Item label="Diğer" value="Diğer" />
+            </Picker>
+            </View>
             <CustomButton
-            style={styles.signInButton}
+              style={styles.signInButton}
+              textStyle={{fontSize:16}}
               label="Kayıt Ol"
               onPress={() => {
                 navigation.navigate('Home');

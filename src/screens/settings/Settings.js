@@ -43,7 +43,7 @@ function Settings({navigation}) {
           </View>
           <View style={styles.itemContainer}>
             <Text style={styles.settingOptionsText}>Güvenlik Ayarları</Text>
-            <TouchableOpacity style={styles.iconButton}>
+            <TouchableOpacity style={styles.iconButton}  onPress={()=>navigation.navigate('SecuritySettings')}>
               <Icon
                 name={'angle-right'}
                 size={25}
@@ -54,7 +54,7 @@ function Settings({navigation}) {
           </View>
           <View style={styles.itemContainer}>
             <Text style={styles.settingOptionsText}>Eşleşme Ayarları</Text>
-            <TouchableOpacity style={styles.iconButton}>
+            <TouchableOpacity style={styles.iconButton} onPress={()=>navigation.navigate('MatchesSettings')}>
               <Icon
                 name={'angle-right'}
                 size={25}

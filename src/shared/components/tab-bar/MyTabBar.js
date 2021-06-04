@@ -5,13 +5,15 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {Colors} from '../../Styles/Color';
 import LinearGradient from 'react-native-linear-gradient';
+
 let isBigScreen=Dimensions.get('window').height>600;
+
 function MyTabBar({state, navigation,descriptors}) {
   const focusedOptions = descriptors[state.routes[state.index].key].options;
   if (focusedOptions.tabBarVisible === false) {
     return null;
   };
-
+  
   function TabIcon(route, navigation, isFocused) {
     let iconName;
     if (route.name === 'Matches') {
@@ -21,9 +23,6 @@ function MyTabBar({state, navigation,descriptors}) {
     } else if (route.name === 'Messages') {
       iconName = 'envelope-open';
     }
-  
-
-
     return (
       <TouchableOpacity
         activeOpacity={1}
