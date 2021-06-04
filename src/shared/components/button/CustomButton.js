@@ -5,7 +5,7 @@ import styles from './style';
 function CustomButton(props) {
   return (
     <TouchableOpacity activeOpacity={props.activeOpacity} style={{...styles.signInButton,...props.style}} onPress={props.onPress}>
-    <Text style={styles.text}>{props.label}</Text>
+    <Text style={{...styles.text,...props.textStyle}}>{props.label}</Text>
   </TouchableOpacity>
   );
 };

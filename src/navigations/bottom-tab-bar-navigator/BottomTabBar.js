@@ -2,7 +2,7 @@ import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
-import {getFocusedRouteNameFromRoute} from '@react-navigation/native'
+import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
 
 import Matches from '../../screens/matches/Matches';
 import ProfileDetails from '../../screens/matches/profile-details/ProfileDetails';
@@ -10,6 +10,8 @@ import Messages from '../../screens/messages/Messages';
 import MessageDetail from '../../screens/messages/message-detail/MessageDetail';
 import Settings from '../../screens/settings/Settings';
 import EditProfile from '../../screens/settings/edit-profile/EditProfile';
+import SecuritySettings from '../../screens/settings/security-settings/SecuritySettings';
+import MatchesSettings from '../../screens/settings/matches-settings/MatchesSettings';
 import MyTabBar from '../../shared/components/tab-bar/MyTabBar';
 import headerOptions from '../../shared/components/header/MyHeader';
 
@@ -19,7 +21,7 @@ const SettingStack = createStackNavigator();
 
 function messagesStack() {
   return (
-    <MessageStack.Navigator mode="modal" headerMode={'screen'}>
+    <MessageStack.Navigator  headerMode={'screen'}>
       <MessageStack.Screen
         name={'Messages'}
         component={Messages}
@@ -45,7 +47,6 @@ function messagesStack() {
           header: ({scene, previous, navigation}) => {
             return headerOptions(scene, previous, navigation);
           },
-          
         }}
       />
     </MessageStack.Navigator>
@@ -98,12 +99,30 @@ function settingStack() {
           },
         }}
       />
+      <SettingStack.Screen
+        name={'SecuritySettings'}
+        component={SecuritySettings}
+        options={{
+          header: ({scene, previous, navigation}) => {
+            return headerOptions(scene, previous, navigation);
+          },
+        }}
+      />
+      <SettingStack.Screen
+        name={'MatchesSettings'}
+        component={MatchesSettings}
+        options={{
+          header: ({scene, previous, navigation}) => {
+            return headerOptions(scene, previous, navigation);
+          },
+        }}
+      />
     </SettingStack.Navigator>
   );
 }
 
 const getTabBarVisibility = (route) => {
-  const routeName = getFocusedRouteNameFromRoute(route) ?? "";
+  const routeName = getFocusedRouteNameFromRoute(route) ?? '';
   if (routeName === 'MessageDetails') {
     return false;
   }
@@ -115,10 +134,12 @@ const Tab = createBottomTabNavigator();
 function TabBar(props) {
   return (
     <Tab.Navigator tabBar={(props) => <MyTabBar {...props} />}>
-      <Tab.Screen name={'Messages'} component={messagesStack} 
-      options={({ route }) => ({
-        tabBarVisible:getTabBarVisibility(route)
-      })}
+      <Tab.Screen
+        name={'Messages'}
+        component={messagesStack}
+        options={({route}) => ({
+          tabBarVisible: getTabBarVisibility(route),
+        })}
       />
       <Tab.Screen name={'Matches'} component={matchStack} />
       <Tab.Screen name={'Settings'} component={settingStack} />
