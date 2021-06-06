@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity,Dimensions, SafeAreaView} from 'react-native';
+import {View, Text, TouchableOpacity,Dimensions, SafeAreaView,Image} from 'react-native';
 import {Colors} from '../../Styles/Color';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -36,8 +36,9 @@ function MyHeader(props) {
           alignItems: 'center',
           justifyContent: 'center',
           marginHorizontal: 21,
+          overflow:'hidden'
         }}>
-        <Text>LOGO</Text>
+         <Image source={require('../../images/Adsız.png')} style={{width:'100%',height:'100%'}}/>
       </View>
       <Text>{props.title}</Text>
     </LinearGradient>

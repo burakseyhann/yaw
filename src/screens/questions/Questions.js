@@ -16,8 +16,7 @@ function Questions(props) {
       <View style={styles.itemContainer}>
         <View style={styles.questionContainer}>
           <Text>
-            Merhaba Nasılsın??erhaba Nasılsın?erhaba Nasılsın?erhaba
-            Nasılsın?erhaba Nasılsın?{' '}
+               Aşk mı? Para mı? desem bana yalan söyler misin :)))
           </Text>
         </View>
         <View style={styles.buttonContainer}>

@@ -7,5 +7,6 @@ export default StyleSheet.create({
     borderWidth: 3,
     borderColor: 'rgb(253,132,163)',
     borderRadius: 100,
+    overflow:'hidden'
   },
 });
